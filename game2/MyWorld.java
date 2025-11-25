@@ -19,5 +19,6 @@ public class MyWorld extends World
         super(1500, 950, 1); 
         addObject( new taro_mallet(), 250, 475 );
         addObject( new hanako_mallet(), 1250, 475 );
+        addObject( new pack(), 750, 475 );
     }
 }
