@@ -21,5 +21,9 @@ public class MyWorld extends World
         addObject( new goal1(), 67, 493 );
         addObject( new goal2(), 1413, 493 );
         addObject( new waku(), 740, 490 );
+        addObject( new taro_mallet(), 250, 475 );
+        addObject( new hanako_mallet(), 1250, 475 );
+        addObject( new pack(), 750, 475 );
+
     }
 }
