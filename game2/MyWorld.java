@@ -23,7 +23,7 @@ public class MyWorld extends World
         addObject( new waku(), 740, 490 );
         addObject( new taro_mallet(), 250, 475 );
         addObject( new hanako_mallet(), 1250, 475 );
-        addObject( new pack(), 750, 475 );
+        addObject( new pack(), 740, 485);
 
     }
 }
