@@ -15,25 +15,16 @@ public class taro_mallet extends Actor
     public void act() 
     {
         // Add your action code here.
-        if( Greenfoot.isKeyDown( "d" ) ){
-        setRotation(0);
-        move(10);
-        }
-        if( Greenfoot.isKeyDown( "a" ) ){
-        setRotation(0);
-        move(-10);
-        }
-        if( Greenfoot.isKeyDown( "w" ) ){
-        setRotation(270);
-        move(10);
-        }
-        if( Greenfoot.isKeyDown( "s" ) ){
-        setRotation(270);
-        move(-10);
-        }
+        movemallet();
     }    
     public taro_mallet()
     {
        getImage().scale( 75, 75 );
+    }
+    private void movemallet() {
+        if (Greenfoot.isKeyDown("d")) setLocation(getX() + 15, getY());
+        if (Greenfoot.isKeyDown("a")) setLocation(getX() - 15, getY());
+        if (Greenfoot.isKeyDown("w")) setLocation(getX(), getY() - 15);
+        if (Greenfoot.isKeyDown("s")) setLocation(getX(), getY() + 15);
     }
 }
