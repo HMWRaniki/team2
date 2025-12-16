@@ -15,6 +15,8 @@ public class waku extends Actor
     public void act() 
     {
         // Add your action code here.
+        Actor pack = getOneIntersectingObject( pack.class );
+        
         getImage().setTransparency(128);
     }    
 }
