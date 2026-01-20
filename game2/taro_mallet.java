@@ -19,7 +19,7 @@ public class taro_mallet extends Actor
     }    
     public taro_mallet()
     {
-       getImage().scale( 75, 75 );
+       getImage().scale( 100, 100 );
     }
     private void movemallet() {
         int x = getX();
@@ -37,7 +37,7 @@ public class taro_mallet extends Actor
         int leftLimit   = 111;
         int rightLimit  = 740;
         int topLimit    = 111;
-        int bottomLimit = 871;
+        int bottomLimit = 874;
 
         // はみ出し補正
         if (x < leftLimit + halfW)  x = leftLimit + halfW;

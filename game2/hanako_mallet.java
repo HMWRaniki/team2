@@ -19,7 +19,7 @@ public class hanako_mallet extends Actor
     }
     public hanako_mallet()
     {
-       getImage().scale( 75, 75 );
+       getImage().scale( 100, 100 );
     }
     private void movemallet() {
         int x = getX();
