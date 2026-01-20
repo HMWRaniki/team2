@@ -13,6 +13,7 @@ comment2.params=
 comment2.target=pack()
 comment3.params=
 comment3.target=void\ movePack()
+<<<<<<< Updated upstream
 comment4.params=dx
 comment4.target=void\ setdx(double)
 comment5.params=dy
@@ -26,3 +27,12 @@ comment8.target=void\ bounceX()
 comment9.params=
 comment9.target=void\ bounceY()
 numComments=13
+=======
+comment4.params=
+comment4.target=void\ bounceMallet()
+comment5.params=
+comment5.target=void\ bounceMallet2()
+comment6.params=
+comment6.target=void\ bounceWall()
+numComments=7
+>>>>>>> Stashed changes

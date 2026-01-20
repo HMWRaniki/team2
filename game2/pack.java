@@ -14,6 +14,7 @@ public class pack extends Actor
      */
     private double dx = 0;  // x方向速度
     private double dy = 0;  // y方向速度
+<<<<<<< Updated upstream
     private double friction = 0.99; // 摩擦による減速（0.90〜0.99で調整）    
     int dx1 = 3;
     int dy1 = 2;
@@ -29,28 +30,43 @@ public class pack extends Actor
          hanako_getPoint();
          taro_getPoint();
          win();
+=======
+    private double friction = 0.99; // 摩擦による減速（0.90〜0.99で調整）
+    public void act() 
+    {
+        bounceMallet();
+        bounceMallet2();
+        bounceWall();
+        movePack();
+>>>>>>> Stashed changes
     }
+
     public pack()
     {
-       getImage().scale( 125, 125);
+        getImage().scale( 125, 125);
     }
+
     private void movePack() {
         setLocation(getX() + (int)dx, getY() + (int)dy);
 
         // 少しずつ減速して止まる
-        //dx *= friction;
-        //dy *= friction;
+        dx *= friction;
+        dy *= friction;
 
         // 非常に小さくなったら完全停止
         if (Math.abs(dx) < 0.1) dx = 0;
         if (Math.abs(dy) < 0.1) dy = 0;
     }
+<<<<<<< Updated upstream
     public void setdx(double dx){
         this.dx = dx;
     }
     public void setdy(double dy){
         this.dy = dy;
     }
+=======
+
+>>>>>>> Stashed changes
     private void bounceMallet() {
         hanako_mallet m = (hanako_mallet)getOneIntersectingObject(hanako_mallet.class);
 
@@ -67,7 +83,7 @@ public class pack extends Actor
             double ny = pushY / length;
 
             // パックに速度を与える（反射）
-            double power = 10.0;  // 強さ（5〜12で調整）
+            double power = 14.0;  // 強さ（5〜12で調整）
             dx = nx * power;
             dy = ny * power;
 
@@ -77,6 +93,7 @@ public class pack extends Actor
             setLocation(m.getX() + sepX, m.getY() + sepY);
         }
     }
+
     private void bounceMallet2() {
         taro_mallet m = (taro_mallet)getOneIntersectingObject(taro_mallet.class);
 
@@ -93,7 +110,7 @@ public class pack extends Actor
             double ny = pushY / length;
 
             // パックに速度を与える（反射）
-            double power = 8.0;  // 強さ（5〜12で調整）
+            double power = 14.0;  // 強さ（5〜12で調整）
             dx = nx * power;
             dy = ny * power;
 
@@ -103,6 +120,7 @@ public class pack extends Actor
             setLocation(m.getX() + sepX, m.getY() + sepY);
         }
     }
+<<<<<<< Updated upstream
     public void bounceX() {
         dx1 = -dx1;
     }
@@ -139,5 +157,39 @@ public class pack extends Actor
             Greenfoot.stop();
         }
    }
+=======
+
+    private void bounceWall() {
+        int halfW = getImage().getWidth() / 2;
+        int halfH = getImage().getHeight() / 2;
+
+        int left = 111 + halfW;
+        int right = 1372 - halfW;
+        int top = 111 + halfH;
+        int bottom = 874 - halfH;
+
+        int x = getX();
+        int y = getY();
+
+        // 左右の壁
+        if (x <= left) {
+            setLocation(left, y);
+            dx = -dx;
+        }
+        if (x >= right) {
+            setLocation(right, y);
+            dx = -dx;
+        }
+        // 上下の壁
+        if (y <= top) {
+            setLocation(x, top);
+            dy = -dy;
+        }
+        if (y >= bottom) {
+            setLocation(x, bottom);
+            dy = -dy;
+        }
+    }
+>>>>>>> Stashed changes
 }
 

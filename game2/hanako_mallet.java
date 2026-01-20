@@ -22,9 +22,29 @@ public class hanako_mallet extends Actor
        getImage().scale( 75, 75 );
     }
     private void movemallet() {
-        if (Greenfoot.isKeyDown("right")) setLocation(getX() + 15, getY());
-        if (Greenfoot.isKeyDown("left")) setLocation(getX() - 15, getY());
-        if (Greenfoot.isKeyDown("up")) setLocation(getX(), getY() - 15);
-        if (Greenfoot.isKeyDown("down")) setLocation(getX(), getY() + 15);
+        int x = getX();
+        int y = getY();
+        int speed = 15;
+
+        if (Greenfoot.isKeyDown("right")) x += speed;
+        if (Greenfoot.isKeyDown("left"))  x -= speed;
+        if (Greenfoot.isKeyDown("up"))    y -= speed;
+        if (Greenfoot.isKeyDown("down"))  y += speed;
+
+        int halfW = getImage().getWidth() / 2;
+        int halfH = getImage().getHeight() / 2;
+        
+        int leftLimit   = 740;
+        int rightLimit  = 1368;
+        int topLimit    = 111;
+        int bottomLimit = 874;
+
+        // はみ出し補正
+        if (x < leftLimit + halfW)  x = leftLimit + halfW;
+        if (x > rightLimit - halfW) x = rightLimit - halfW;
+        if (y < topLimit + halfH)   y = topLimit + halfH;
+        if (y > bottomLimit - halfH) y = bottomLimit - halfH;
+        
+        setLocation(x, y);
     }
 }

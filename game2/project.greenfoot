@@ -36,6 +36,7 @@ dependency7.type=UsesDependency
 dependency8.from=pack
 dependency8.to=hanako_mallet
 dependency8.type=UsesDependency
+<<<<<<< Updated upstream
 dependency9.from=pack
 dependency9.to=taro_mallet
 dependency9.type=UsesDependency
@@ -45,6 +46,14 @@ editor.fx.0.x=225
 editor.fx.0.y=50
 height=1135
 package.numDependencies=11
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+height=1100
+package.numDependencies=8
+>>>>>>> Stashed changes
 package.numTargets=7
 project.charset=UTF-8
 publish.hasSource=false

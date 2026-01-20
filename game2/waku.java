@@ -1,6 +1,7 @@
 import greenfoot.*;
  
 /**
+<<<<<<< Updated upstream
 * 外枠の壁 - ボールが当たったら反射する
 */
 public class waku extends Actor {
@@ -111,3 +112,22 @@ public class waku extends Actor {
         getImage().scale(1480, 1000);
     }
 }
+=======
+ * Write a description of class waku here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class waku extends Actor
+{
+    /**
+     * Act - do whatever the waku wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        // Add your action code here.
+        getImage().setTransparency(0);
+    }    
+}
+>>>>>>> Stashed changes

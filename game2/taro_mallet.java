@@ -22,9 +22,29 @@ public class taro_mallet extends Actor
        getImage().scale( 75, 75 );
     }
     private void movemallet() {
-        if (Greenfoot.isKeyDown("d")) setLocation(getX() + 15, getY());
-        if (Greenfoot.isKeyDown("a")) setLocation(getX() - 15, getY());
-        if (Greenfoot.isKeyDown("w")) setLocation(getX(), getY() - 15);
-        if (Greenfoot.isKeyDown("s")) setLocation(getX(), getY() + 15);
+        int x = getX();
+        int y = getY();
+        int speed = 15;
+
+        if (Greenfoot.isKeyDown("d")) x += speed;
+        if (Greenfoot.isKeyDown("a"))  x -= speed;
+        if (Greenfoot.isKeyDown("w"))    y -= speed;
+        if (Greenfoot.isKeyDown("s"))  y += speed;
+
+        int halfW = getImage().getWidth() / 2;
+        int halfH = getImage().getHeight() / 2;
+        
+        int leftLimit   = 111;
+        int rightLimit  = 740;
+        int topLimit    = 111;
+        int bottomLimit = 871;
+
+        // はみ出し補正
+        if (x < leftLimit + halfW)  x = leftLimit + halfW;
+        if (x > rightLimit - halfW) x = rightLimit - halfW;
+        if (y < topLimit + halfH)   y = topLimit + halfH;
+        if (y > bottomLimit - halfH) y = bottomLimit - halfH;
+        
+        setLocation(x, y);
     }
 }
