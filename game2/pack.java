@@ -132,12 +132,17 @@ public class pack extends Actor
     public void win(){
         if(taro_point == 5){
             getWorld().showText( "Taro Winner!", 740, 285 );
+            taro_point = 0;
+            hanako_point = 0;
             Greenfoot.stop();
         }
         if(hanako_point == 1){
             getWorld().showText( "Hanako Winner!", 740, 285 );
+            taro_point = 0;
+            hanako_point = 0;
             Greenfoot.stop();
         }
+        
    }
 }
 
