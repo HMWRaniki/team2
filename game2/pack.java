@@ -57,7 +57,7 @@ public class pack extends Actor
             double ny = pushY / length;
 
             // パックに速度を与える（反射）
-            double power = 10.0;  // 強さ（5〜12で調整）
+            double power = 8.0;  // 強さ（5〜12で調整）
             dx = nx * power;
             dy = ny * power;
 
