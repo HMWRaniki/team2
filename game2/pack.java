@@ -4,7 +4,7 @@ public class pack extends Actor
 {
     private double dx = 0;  // x方向速度
     private double dy = 0;  // y方向速度
-    private double friction = 0.99; // 摩擦（0.95〜0.995くらいで調整）
+    private double friction = 0.995; // 摩擦（0.95〜0.995くらいで調整）
 
     public static int hanako_point = 0;
     public static int taro_point = 0;
@@ -107,7 +107,7 @@ public class pack extends Actor
         double nx = pushX / length;
         double ny = pushY / length;
 
-        double power = 8.0;  // 強さ調整
+        double power = 14.0;  // 強さ調整
         dx = nx * power;
         dy = ny * power;
 
@@ -132,7 +132,7 @@ public class pack extends Actor
         double nx = pushX / length;
         double ny = pushY / length;
 
-        double power = 8.0;  // 強さ調整
+        double power = 14.0;  // 強さ調整
         dx = nx * power;
         dy = ny * power;
 
@@ -145,36 +145,27 @@ public class pack extends Actor
 
     public void hanako_getPoint() {
 
-        World w = getWorld();
-        if (w == null) return;
-
-        int r = getImage().getWidth() / 2;
-
-        int GOAL_LINE_X = 102;  // 例：90pxより左に“中心”が入ったら得点
-
-        if (getX() <= GOAL_LINE_X + r) {
+        Actor hanako_mallet = getOneIntersectingObject( goal1.class );
+        if( hanako_mallet != null ){
             hanako_point++;
-            resetCenter();
-        }
+            resetCenter();  
+        }       
+        getWorld().showText( "Hanako's point = " + hanako_point, 1000, 75 );
     }
 
     public void taro_getPoint() {
-        World w = getWorld();
-        if (w == null) return;
-
-        int r = getImage().getWidth() / 2;
-
-        int GOAL_LINE_X = 1377; // 例：1410pxより右に“中心”が入ったら得点
-
-        if (getX() >= GOAL_LINE_X - r) {
+        Actor taro_mallet = getOneIntersectingObject( goal2.class );
+        if( taro_mallet != null ){
             taro_point++;
-            resetCenter();
-        }
+            resetCenter();  
+        }       
+        
+        getWorld().showText( "Taro's point = " + taro_point, 450, 75 );
     }
 
     private void resetCenter()
     {
-        setLocation(750, 475); // World中心（MyWorldと合わせる）
+        setLocation(740, 490); // World中心（MyWorldと合わせる）
         dx = 0;
         dy = 0;
     }

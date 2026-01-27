@@ -15,5 +15,11 @@ public class goal2 extends Actor
     public void act() 
     {
         // Add your action code here.
-    }    
+        //getImage().scale( 75, 375 );
+    }
+    
+    public goal2()
+    {
+        getImage().scale( 75, 300 );
+    }
 }

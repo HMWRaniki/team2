@@ -64,6 +64,15 @@ public class taro_mallet extends Actor
             width = width + 50;
             height = height + 50;
             
+            if(width > 175)
+            {
+                width = 175;
+            }
+            if(height > 175)
+            {
+                height = 175;
+            }
+            
             img.scale(width,height);
             setImage(img);
             getWorld().removeObject( Kino );
